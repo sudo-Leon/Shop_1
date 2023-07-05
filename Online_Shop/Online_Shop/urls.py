@@ -17,6 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from Online_Shop.mainapp import views
+"""
+1:25:42
+"""
 urlpatterns = [
     path('admin/', admin.site.urls),
 ]
@@ -27,3 +31,5 @@ urlpatterns = [
 # административного интерфейса. Это означает, что когда клиент делает запрос на URL,
 # который начинается с 'admin/', Django будет использовать соответствующий обработчик,
 # чтобы обработать этот запрос и предоставить административный интерфейс.
+
+path('',views )
