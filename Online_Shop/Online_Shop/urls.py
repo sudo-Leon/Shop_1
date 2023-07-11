@@ -16,20 +16,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from mainapp import views
 
-from Online_Shop.mainapp import views
 """
 1:25:42
 """
 urlpatterns = [
     path('admin/', admin.site.urls),
-]
-# urlpatterns в Django - это список путей (URL-шаблонов),
-# которые определяют, как обрабатываются запросы от клиента. В данном коде присутствует
-# один элемент в списке urlpatterns, определяющий путь 'admin/' и указывающий,
-# что для этого пути должен быть использован обработчик, предоставляемый Django для
-# административного интерфейса. Это означает, что когда клиент делает запрос на URL,
-# который начинается с 'admin/', Django будет использовать соответствующий обработчик,
-# чтобы обработать этот запрос и предоставить административный интерфейс.
 
-path('',views )
+    path('', views.index),
+    path('products/', views.products),
+    path('contact/', views.contact),
+
+]
